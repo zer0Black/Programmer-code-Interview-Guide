@@ -15,6 +15,10 @@ import java.util.Stack;
  */
 public class SortStackByStack {
 
+	/**
+	 * 该方法时间复杂度O(n²)，且栈中元素不能相同
+	 * @param stack
+	 */
 	public static void sortStackByStack1(Stack<Integer> stack){
 		Stack<Integer> helps = new Stack<>();
 		
@@ -45,16 +49,37 @@ public class SortStackByStack {
 		}
 	}
 	
+	/**
+	 * 一个算法原型，将stack调整为递增/递减，可快速获取最大/最小值
+	 * @param stack
+	 */
+	public static void sortStackByStack2(Stack<Integer> stack){
+		Stack<Integer> helps = new Stack<>();
+		while(!stack.isEmpty()){
+			int cur = stack.pop();
+			while(!helps.isEmpty() && helps.peek() < cur){
+				stack.push(helps.pop());
+			}
+			helps.push(cur);
+		}
+		
+		while(!helps.isEmpty()){
+			stack.push(helps.pop());
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		Stack<Integer> stack = new Stack<>();
 		stack.push(4);
 		stack.push(1);
 		stack.push(5);
+		stack.push(1);
 		stack.push(2);
 		stack.push(3);
 		
 		System.out.println("排序前"+stack);
-		SortStackByStack.sortStackByStack1(stack);
+		SortStackByStack.sortStackByStack2(stack);
 		System.out.println("排序后"+stack);
 	}
 	
