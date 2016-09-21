@@ -6,10 +6,10 @@ package com.lxt.stackAndQueue;
 import java.util.Stack;
 
 /**
- * ÓÃÒ»¸öÕ»ÊµÏÖÁíÒ»¸öÕ»µÄÅÅĞò
- * ÌâÄ¿£ºÒ»¸öÕ»ÔªËØµÄÀàĞÍÎªÕûĞÍ£¬ÏÖÔÚÏë½«¸ÃÕ»´Ó¶¥µ½µ×°´´Ó´óµ½Ğ¡µÄ
- * 		Ë³ĞòÅÅĞò£¬Ö»ÔÊĞíÉêÇëÒ»¸öÕ»£¬³ı´ËÖ®Íâ£¬¿ÉÒÔÉêÇëĞÂµÄ±äÁ¿£¬
- * 		µ«²»ÄÜÉêÇë¶îÍâÊı¾İ½á¹¹¡£ÈçºÎÍê³ÉÅÅĞò
+ * ç”¨ä¸€ä¸ªæ ˆå®ç°å¦ä¸€ä¸ªæ ˆçš„æ’åº
+ * é¢˜ç›®ï¼šä¸€ä¸ªæ ˆå…ƒç´ çš„ç±»å‹ä¸ºæ•´å‹ï¼Œç°åœ¨æƒ³å°†è¯¥æ ˆä»é¡¶åˆ°åº•æŒ‰ä»å¤§åˆ°å°çš„
+ * 		é¡ºåºæ’åºï¼Œåªå…è®¸ç”³è¯·ä¸€ä¸ªæ ˆï¼Œé™¤æ­¤ä¹‹å¤–ï¼Œå¯ä»¥ç”³è¯·æ–°çš„å˜é‡ï¼Œ
+ * 		ä½†ä¸èƒ½ç”³è¯·é¢å¤–æ•°æ®ç»“æ„ã€‚å¦‚ä½•å®Œæˆæ’åº
  * @author zer0
  *
  */
@@ -17,11 +17,12 @@ public class SortStackByStack {
 
 	public static void sortStackByStack1(Stack<Integer> stack){
 		Stack<Integer> helps = new Stack<>();
-		int min = Integer.MIN_VALUE;
+		
 		int len = stack.size()-1;
-		System.out.println("Õ»³¤¶ÈÎª"+(len+1));
+		System.out.println("æ ˆé•¿åº¦"+(len+1));
 		for(int i = 0; i <= len ; i++){
-			//½«Õ»ÔªËØÈ«µ¼Èë¸¨ÖúÕ»£¬²¢»ñÈ¡×îĞ¡Öµ
+			int min = Integer.MIN_VALUE;
+			//æŠŠåŸæ ˆä¸­å…ƒç´ å€’å…¥è¾…åŠ©æ ˆï¼Œå¹¶è·å–æœ€å°å€¼
 			for(int j = len - i; j >=0 && !stack.isEmpty(); j--){
 				int value = stack.pop();
 				if (min == Integer.MIN_VALUE) {
@@ -32,9 +33,9 @@ public class SortStackByStack {
 				helps.push(value);
 			}
 			
-			//½«×îĞ¡Öµpush»ØÕ»ÖĞ
+			//æŠŠæœ€å°å€¼å‹å…¥æ ˆ
 			stack.push(min);
-			//½«¸¨ÖúÕ»ÖĞµÄÔªËØpush»ØÔ­Õ»ÖĞ£¬Óöµ½×îĞ¡Öµ£¬ÔòÌø¹ı
+			//æŠŠè¾…åŠ©æ ˆä¸­çš„å€¼å€’å…¥åŸæ ˆï¼Œé‡åˆ°æœ€å°å€¼åˆ™è·³è¿‡
 			while(!helps.isEmpty()){
 				int value = helps.pop();
 				if (min != value) {
@@ -52,9 +53,9 @@ public class SortStackByStack {
 		stack.push(2);
 		stack.push(3);
 		
-		System.out.println("ÅÅĞòÇ°£º"+stack);
+		System.out.println("æ’åºå‰"+stack);
 		SortStackByStack.sortStackByStack1(stack);
-		System.out.println("ÅÅĞòºó£º"+stack);
+		System.out.println("æ’åºå"+stack);
 	}
 	
 }
