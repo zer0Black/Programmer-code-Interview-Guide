@@ -6,15 +6,15 @@ package com.lxt.stackAndQueue;
 import java.util.Stack;
 
 /**
- * ÌâÄ¿£ºÊµÏÖÒ»¸öÌØÊâµÄÕ»£¬ÔÚÊµÏÖÕ»µÄ»ù±¾¹¦ÄÜµÄ»ù´¡ÉÏ£¬ÔÙÊµÏÖ·µ»ØÕ»ÖĞ×îĞ¡ÔªËØµÄ²Ù×÷
- * ÒªÇó£ºpop/push/getMin ²Ù×÷µÄÊ±¼ä¸´ÔÓ¶È¶¼ÊÇO(1)
+ * é¢˜ç›®ï¼šå®ç°ä¸€ä¸ªç‰¹æ®Šçš„æ ˆï¼Œåœ¨å®ç°æ ˆçš„åŸºæœ¬åŠŸèƒ½çš„åŸºç¡€ä¸Šï¼Œå†å®ç°è¿”å›æ ˆä¸­æœ€å°å…ƒç´ çš„æ“ä½œ
+ * è¦æ±‚ï¼špop/push/getMin æ“ä½œçš„æ—¶é—´å¤æ‚åº¦éƒ½æ˜¯O(1)
  * @author zer0
  *
  */
 public class MinStack {
 	
 	private Stack<Integer> datas = new Stack<>();
-	private Stack<Integer> mins = new Stack<>(); //±£´æ×îĞ¡ÖµµÄÕ»
+	private Stack<Integer> mins = new Stack<>(); //ä¿å­˜æœ€å°å€¼çš„æ ˆ
 	
 	public void push(Integer value){
 		datas.push(value);
@@ -29,7 +29,7 @@ public class MinStack {
 	
 	public Integer pop(){
 		if (datas.isEmpty() || mins.isEmpty()) {
-			throw new RuntimeException("Õ»Îª¿Õ");
+			throw new RuntimeException("æ ˆä¸ºç©º");
 		}
 		mins.pop();
 		return datas.pop();
@@ -37,14 +37,14 @@ public class MinStack {
 	
 	public Integer peek(){
 		if (datas.isEmpty()) {
-			throw new RuntimeException("Õ»Îª¿Õ");
+			throw new RuntimeException("æ ˆä¸ºç©º");
 		}
 		return datas.peek();
 	}
 	
 	public Integer getMin(){
 		if (mins.isEmpty()) {
-			throw new RuntimeException("Õ»Îª¿Õ");
+			throw new RuntimeException("æ ˆä¸ºç©º");
 		}
 		return mins.peek();
 	}

@@ -8,20 +8,20 @@ import java.util.Stack;
 import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
 
 /**
- * ÈçºÎ½öÓÃµİ¹éº¯ÊıºÍÕ»²Ù×÷ÄæĞòÒ»¸öÕ»
- * ÌâÄ¿£ºÒ»¸öÕ»ÒÀ´ÎÑ¹ÈË1/2/3/4/5£¬ÄÇÃ´´ÓÕ»¶¥µ½Õ»µ×·Ö±ğÎª5/4/3/2/1¡£
- *      ½«Õâ¸öÕ»×ªÖÃºó£¬´ÓÕ»¶¥µ½Õ»µ×Îª1/2/3/4/5£¬Ò²¾ÍÊÇÊµÏÖÕ»ÖĞµÄÔªËØÄæĞò£¬
- *      µ«Ö»ÄÜÓÃµİ¹éº¯ÊıÀ´ÊµÏÖ£¬²»ÄÜÓÃÆäËûÊı¾İ½á¹¹¡£
+ * å¦‚ä½•ä»…ç”¨é€’å½’å‡½æ•°å’Œæ ˆæ“ä½œé€†åºä¸€ä¸ªæ ˆ
+ * é¢˜ç›®ï¼šä¸€ä¸ªæ ˆä¾æ¬¡å‹äºº1/2/3/4/5ï¼Œé‚£ä¹ˆä»æ ˆé¡¶åˆ°æ ˆåº•åˆ†åˆ«ä¸º5/4/3/2/1ã€‚
+ *      å°†è¿™ä¸ªæ ˆè½¬ç½®åï¼Œä»æ ˆé¡¶åˆ°æ ˆåº•ä¸º1/2/3/4/5ï¼Œä¹Ÿå°±æ˜¯å®ç°æ ˆä¸­çš„å…ƒç´ é€†åºï¼Œ
+ *      ä½†åªèƒ½ç”¨é€’å½’å‡½æ•°æ¥å®ç°ï¼Œä¸èƒ½ç”¨å…¶ä»–æ•°æ®ç»“æ„ã€‚
  * @author zer0
  *
  */
 public class ReverseStack {
 	
 	/**
-	 * »ñÈ¡Õ»µ×ÔªËØ²¢ÒÆ³ı
+	 * è·å–æ ˆåº•å…ƒç´ å¹¶ç§»é™¤
 	 * @param stack
-	 * @return Õ»µ×Öµ
-	 * 2016Äê9ÔÂ21ÈÕ
+	 * @return æ ˆåº•å€¼
+	 * 2016å¹´9æœˆ21æ—¥
 	 */
 	private static int getLastAndRemove(Stack<Integer> stack){
 		int res = stack.pop();
@@ -50,13 +50,13 @@ public class ReverseStack {
 		stack.push(4);
 		stack.push(5);
 	
-		System.out.print("ÄæĞòÇ°£º");
+		System.out.print("é€†åºå‰ï¼š");
 		System.out.print(stack+" ");
 		
 		ReverseStack.reverse(stack);
 		
 		System.out.println();
-		System.out.print("ÄæĞòºó£º");
+		System.out.print("é€†åºåï¼š");
 		System.out.print(stack+" ");
 	}
 }

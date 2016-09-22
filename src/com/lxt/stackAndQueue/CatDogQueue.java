@@ -8,22 +8,22 @@ import java.util.LinkedList;
 import com.sun.xml.internal.ws.encoding.TagInfoset;
 
 /**
- * Ã¨¹·¶ÓÁĞ
- * ÌâÄ¿£º³èÎï¡¢¹·ºÍÃ¨µÄÀàÈçÏÂ;
+ * çŒ«ç‹—é˜Ÿåˆ—
+ * é¢˜ç›®ï¼šå® ç‰©ã€ç‹—å’ŒçŒ«çš„ç±»å¦‚ä¸‹;
  * 
- * ÊµÏÖÒ»ÖÖÃ¨¹·¶ÓÁĞµÄ½á¹¹£¬ÒªÇóÈçÏÂ£º
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃadd·½·¨½«catÀà»òdogÀàµÄÊµÀı·ÅÈë¶ÓÁĞÖĞ
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃpollAll·½·¨£¬½«¶ÓÁĞËùÓĞÊµÀı°´ÕÕ½ø¶ÓÁĞµÄÏÈºóË³Ğòµ¯³ö
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃpollDog·½·¨£¬½«¶ÓÁĞÖĞdogÀàµÄÊµÀı°´ÕÕ½ø¶ÓÁĞµÄÏÈºóË³ĞòÒÀ´Îµ¯³ö
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃpollCat·½·¨£¬½«¶ÓÁĞÖĞcatÀàµÄÊµÀı°´ÕÕ½ø¶ÓÁĞµÄÏÈºóË³ĞòÒÀ´Îµ¯³ö
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃisEmpty·½·¨£¬¼ì²é¶ÓÁĞÖĞÊÇ·ñ»¹ÓĞdog»òcat¶ÓÁĞ
- *     ÓÃ»§¿ÉÒÔµ÷ÓÃisDogEmpty/isCatEmpty·½·¨£¬¼ì²é¶ÓÁĞÖĞÊÇ·ñÓĞdog/catÀàµÄÊµÀı
+ * å®ç°ä¸€ç§çŒ«ç‹—é˜Ÿåˆ—çš„ç»“æ„ï¼Œè¦æ±‚å¦‚ä¸‹ï¼š
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨addæ–¹æ³•å°†catç±»æˆ–dogç±»çš„å®ä¾‹æ”¾å…¥é˜Ÿåˆ—ä¸­
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨pollAllæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—æ‰€æœ‰å®ä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåé¡ºåºå¼¹å‡º
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨pollDogæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—ä¸­dogç±»çš„å®ä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåé¡ºåºä¾æ¬¡å¼¹å‡º
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨pollCatæ–¹æ³•ï¼Œå°†é˜Ÿåˆ—ä¸­catç±»çš„å®ä¾‹æŒ‰ç…§è¿›é˜Ÿåˆ—çš„å…ˆåé¡ºåºä¾æ¬¡å¼¹å‡º
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨isEmptyæ–¹æ³•ï¼Œæ£€æŸ¥é˜Ÿåˆ—ä¸­æ˜¯å¦è¿˜æœ‰dogæˆ–caté˜Ÿåˆ—
+ *     ç”¨æˆ·å¯ä»¥è°ƒç”¨isDogEmpty/isCatEmptyæ–¹æ³•ï¼Œæ£€æŸ¥é˜Ÿåˆ—ä¸­æ˜¯å¦æœ‰dog/catç±»çš„å®ä¾‹
  * @author zer0
  *
  */
 public class CatDogQueue {
 
-	/************ÌâÄ¿Ëù¸ø***********/
+	/************é¢˜ç›®æ‰€ç»™***********/
 	public class Pet{
 		private String type;
 		
@@ -47,7 +47,7 @@ public class CatDogQueue {
 			super("cat");
 		}
 	}
-	/************ÌâÄ¿Ëù¸ø***********/
+	/************é¢˜ç›®æ‰€ç»™***********/
 	
 	public static class PetQueueEnter{
 		public int count;
@@ -72,42 +72,42 @@ public class CatDogQueue {
 			dogList.add(new PetQueueEnter(pet, count++));
 		}else if (pet.getPetType().equals("cat")) {
 			catList.add(new PetQueueEnter(pet, count++));
-		//²»ÑÏ½÷£¬Ó¦¼ÓÉÏÈçÏÂÅĞ¶Ï£¬¸æËßµ÷ÓÃÕß´«ÈëµÄ²ÎÊı´íÎó
+		//ä¸ä¸¥è°¨ï¼Œåº”åŠ ä¸Šå¦‚ä¸‹åˆ¤æ–­ï¼Œå‘Šè¯‰è°ƒç”¨è€…ä¼ å…¥çš„å‚æ•°é”™è¯¯
 		}else {
-			throw new RuntimeException("´íÎó£¬·ÇÃ¨·Ç¹·");
+			throw new RuntimeException("é”™è¯¯ï¼ŒéçŒ«éç‹—");
 		}
 	}
 	
 	public Pet pollAll(){
 		if (!dogList.isEmpty() && !catList.isEmpty()) {
 			if (dogList.peekFirst().count < catList.peekFirst().count) {
-				System.out.println("¹·¼ÆÊı£º"+dogList.peekFirst().count);
+				System.out.println("ç‹—è®¡æ•°ï¼š"+dogList.peekFirst().count);
 				return dogList.pollFirst().getPet();
 			}else {
-				System.out.println("Ã¨¼ÆÊı£º"+catList.peekFirst().count);
+				System.out.println("çŒ«è®¡æ•°ï¼š"+catList.peekFirst().count);
 				return catList.pollFirst().getPet();
 			}
 		}else if (!dogList.isEmpty()) {
-			System.out.println("¹·¼ÆÊı£º"+dogList.peekFirst().count);
+			System.out.println("ç‹—è®¡æ•°ï¼š"+dogList.peekFirst().count);
 			return dogList.pollFirst().getPet();
 		}else if (!catList.isEmpty()) {
-			System.out.println("Ã¨¼ÆÊı£º"+catList.peekFirst().count);
+			System.out.println("çŒ«è®¡æ•°ï¼š"+catList.peekFirst().count);
 			return catList.pollFirst().getPet();
 		}else {
-			throw new RuntimeException("´íÎó£¬¶ÓÁĞÎª¿Õ");
+			throw new RuntimeException("é”™è¯¯ï¼Œé˜Ÿåˆ—ä¸ºç©º");
 		}
 	}
 	
 	public Cat pollCat(){
 		if (catList.isEmpty()) {
-			throw new RuntimeException("Ã¨¶ÓÁĞÎª¿Õ");
+			throw new RuntimeException("çŒ«é˜Ÿåˆ—ä¸ºç©º");
 		}
 		return (Cat)catList.pollFirst().getPet();
 	}
 	
 	public Dog pollDog(){
 		if (dogList.isEmpty()) {
-			throw new RuntimeException("¹·¶ÓÁĞÎª¿Õ");
+			throw new RuntimeException("ç‹—é˜Ÿåˆ—ä¸ºç©º");
 		}
 		return (Dog)dogList.pollFirst().getPet();
 	}

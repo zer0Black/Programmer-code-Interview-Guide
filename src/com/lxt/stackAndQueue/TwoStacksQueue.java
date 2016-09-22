@@ -6,7 +6,7 @@ package com.lxt.stackAndQueue;
 import java.util.Stack;
 
 /**
- * ÌâÄ¿£º±àĞ´Ò»¸öÀà£¬ÓÃÁ½¸öÕ»ÊµÏÖ¶ÓÁĞ£¬Ö§³Ö¶ÓÁĞµÄ»ù±¾²Ù×÷£¨add/poll/peek£©
+ * é¢˜ç›®ï¼šç¼–å†™ä¸€ä¸ªç±»ï¼Œç”¨ä¸¤ä¸ªæ ˆå®ç°é˜Ÿåˆ—ï¼Œæ”¯æŒé˜Ÿåˆ—çš„åŸºæœ¬æ“ä½œï¼ˆadd/poll/peekï¼‰
  * @author zer0
  *
  */
@@ -27,7 +27,7 @@ public class TwoStacksQueue {
 		}
 		
 		if (outStack.isEmpty()) {
-			throw new RuntimeException("¶ÓÁĞÎª¿Õ");
+			throw new RuntimeException("é˜Ÿåˆ—ä¸ºç©º");
 		}
 		
 		return outStack.pop();
@@ -41,7 +41,7 @@ public class TwoStacksQueue {
 		}
 		
 		if (outStack.isEmpty()) {
-			throw new RuntimeException("¶ÓÁĞÎª¿Õ");
+			throw new RuntimeException("é˜Ÿåˆ—ä¸ºç©º");
 		}
 		
 		return outStack.peek();
