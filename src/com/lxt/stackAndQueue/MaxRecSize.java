@@ -5,8 +5,6 @@ package com.lxt.stackAndQueue;
 
 import java.util.Stack;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
-
 /**
  * 求最大子矩阵大小
  * 题目：给定一个整型矩阵map，其中的值只有0和1两种，
