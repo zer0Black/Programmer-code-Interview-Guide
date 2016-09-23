@@ -9,7 +9,7 @@ package com.lxt.linkedList;
  * @author zer0
  *
  */
-public class PrintCommonPart {
+public class PrintCommonPart{
 
 	/**
 	 * 只要值相同就算公共部分
