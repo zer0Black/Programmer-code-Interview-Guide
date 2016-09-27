@@ -87,8 +87,8 @@ public class ReverseKNode {
 			count++;
 			end = cur;
 			Node next = cur.next;
+			start = pre == null ? head : pre.next;
 			if (count == k) {
-				start = pre == null ? head : pre.next;
 				newHead = newHead == head ? end : newHead;
 				pre = resign2(pre, start, end, next);
 				count = 0;
@@ -137,7 +137,7 @@ public class ReverseKNode {
 		node7.next = node8;
 		node8.next = node9;
 		
-		Node node = reverseKNode1(node1, 1);
+		Node node = reverseKNode2(node1, 3);
 		while(node!=null){
 			System.out.print(node.value + " ");
 			node = node.next;
