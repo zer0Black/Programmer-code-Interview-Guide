@@ -5,8 +5,6 @@ import java.util.Queue;
 
 import com.lxt.tree.TreeNode;
 
-import sun.reflect.generics.tree.Tree;
-
 /**
  * 将搜索二叉树转换为有序的双向链表
  * @author zer0
