@@ -116,12 +116,15 @@ public class TreeOrderLoop {
 		TreeNode node4 = new TreeNode(4);
 		TreeNode node5 = new TreeNode(5);
 		TreeNode node6 = new TreeNode(6);
+		TreeNode node7 = new TreeNode(7);
 		
 		node1.left = node2;
 		node1.right = node3;
 		node2.left = node4;
+		node2.right = node6;
 		node3.left = node5;
-		node3.right = node6;
+		node4.left = node7;
+	
 		
 		preOrderRecur(node1);
 		System.out.println();
