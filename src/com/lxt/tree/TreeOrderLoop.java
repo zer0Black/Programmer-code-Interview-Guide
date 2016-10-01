@@ -60,6 +60,11 @@ public class TreeOrderLoop {
 		}
 	}
 	
+	/**
+	 * 把左边界全放进stack里
+	 * 弹出即打印，看树有无有子树，有的话重复上面的过程
+	 * @param root
+	 */
 	public static void inOrderNoRecur(TreeNode root){
 		if (root == null) {
 			return;
