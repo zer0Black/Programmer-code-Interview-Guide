@@ -21,7 +21,7 @@ public class IsBST {
 			return false;
 		}
 		
-		return inOrder(root, new TreeNode(0));
+		return inOrder(root, new TreeNode(Integer.MIN_VALUE));
 	}
 	
 	private static boolean inOrder(TreeNode root, TreeNode pre){
