@@ -91,7 +91,7 @@ public class IsPostArrayAndBuild {
 	}
 	
 	public static void main(String[] args) {
-		int[] postArray = {2,4,3,7,10,9,6};
+		int[] postArray = {2,4,3,7,10,9,8};
 		
 		System.out.println(isPostArray(postArray));
 		TreeNode root = rebuildTree(postArray);
