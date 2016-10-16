@@ -66,7 +66,7 @@ public class InOrderSearchStr {
 				if (i < start+1 || strs[i].compareTo(str) < 0) {
 					start = mid;
 				}else{
-					end = i - 1;
+					end = i;
 				}
 			}
 		}
@@ -80,7 +80,7 @@ public class InOrderSearchStr {
 	
 	public static void main(String[] args) {
 		String[] strs = {null, "a", null, "a", null, null, null, "c","c",null,"c","d"};
-		String str = "d";
+		String str = "b";
 		System.out.println(getIndex1(strs, str));
 		System.out.println(getIndex2(strs, str));
 	}
