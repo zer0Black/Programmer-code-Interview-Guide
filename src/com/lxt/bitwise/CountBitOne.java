@@ -11,7 +11,7 @@ public class CountBitOne {
 		int res = 0;
 		while(num != 0){
 			res += num & 1;
-			num >>= 1;
+			num >>>= 1;
 		}
 		return res;
 	}
@@ -23,5 +23,10 @@ public class CountBitOne {
 			res++;
 		}
 		return res;
+	}
+	
+	public static void main(String[] args) {
+		int num = 2;
+		System.out.println(count1(num));
 	}
 }
