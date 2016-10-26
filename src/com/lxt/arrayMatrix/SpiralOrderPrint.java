@@ -10,6 +10,10 @@ public class SpiralOrderPrint {
 
 	public static void spiralOrderPrint(int[][] matrix){
 		
+		if (matrix == null || matrix.length == 0 || matrix[0].length==0) {
+			return;
+		}
+		
 		int sR = 0;
 		int sC = 0;
 		int eR = matrix.length-1;
