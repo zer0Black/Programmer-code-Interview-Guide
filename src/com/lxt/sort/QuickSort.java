@@ -1,5 +1,7 @@
 package com.lxt.sort;
 
+import java.util.Random;
+
 /**
  * 快速排序
  * @author zer0
@@ -15,7 +17,25 @@ public class QuickSort {
 		int index = partition(arr, low, high);
 		quickSort(arr, low, index-1);
 		quickSort(arr, index+1, high);
+	}
+	
+	public static void randomQuickSort(int[] arr, int low, int high){
+		if (arr == null || arr.length == 0 || low >= high) {
+			return;
+		}
 		
+		//随机选择基准
+		randomPivot(arr, low, high);
+		int index = partition(arr, low, high);
+		quickSort(arr, low, index-1);
+		quickSort(arr, index+1, high);
+		
+	}
+	
+	
+	private static void randomPivot(int[] arr, int low, int high){		
+		int index = new Random().nextInt() % (high - low) + low;
+		swap(arr, low, index);
 	}
 	
 	//返回最后pivot的所在的位置
@@ -42,6 +62,12 @@ public class QuickSort {
 		
 		arr[low] = pivot;
 		return low;
+	}
+	
+	private static void swap(int[] arr, int point1, int point2){
+		int tmp = arr[point1];
+		arr[point1] = arr[point2];
+		arr[point2] = tmp;
 	}
 	
 	public static void main(String[] args) {
