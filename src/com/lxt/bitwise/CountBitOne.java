@@ -26,7 +26,7 @@ public class CountBitOne {
 	}
 	
 	public static void main(String[] args) {
-		int num = 2;
+		int num = 7;
 		System.out.println(count1(num));
 	}
 }
