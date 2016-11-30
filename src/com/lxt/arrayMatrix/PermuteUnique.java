@@ -6,8 +6,7 @@ import java.util.List;
 public class PermuteUnique {
 
 	public static List<List<Integer>> permuteUnique(int[] nums) {
-        // 1 固定每个元素，依次递归其他元素
-        // 2 当遍历到元素长度个时，将其添加到列表中
+        // 全排列就是从第一个数字起每个数分别与它后面的数字交换
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         permuteCore(nums, res, 0);
         return res;
