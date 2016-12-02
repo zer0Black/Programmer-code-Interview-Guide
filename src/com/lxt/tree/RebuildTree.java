@@ -74,7 +74,7 @@ public class RebuildTree {
 		}
 		
 		TreeNode rootNode = new TreeNode(root);
-		rootNode.left = posIn(pos, in, posStart, posStart + i - inStart - 1, inStart, i+1);
+		rootNode.left = posIn(pos, in, posStart, posStart + i - inStart - 1, inStart, i-1);
 		rootNode.right = posIn(pos, in, posStart+i-inStart, posEnd-1, i+1, inEnd);
 		return rootNode;
 	}
@@ -82,7 +82,7 @@ public class RebuildTree {
 	public static void main(String[] args) {
 		int[] pre = {1,2,4,5,3,6};
 		int[] in = {4,2,5,1,6,3};
-		TreeNode node = preInToTree(pre, in);
+		TreeNode node = posInToTree(pre, in);
 		PrintTreeIntuitive.printTree(node);
 	}
 }

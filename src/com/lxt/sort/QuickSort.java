@@ -71,7 +71,8 @@ public class QuickSort {
 	}
 	
 	public static void main(String[] args) {
-		int arr[] = {44,5,98,2,32,1,95,35,22,62};
+//		int arr[] = {44,5,98,2,32,1,95,35,22,62};
+		int arr[] = {-1,-2,-3,-100,-1,-50};
 		quickSort(arr, 0, arr.length-1);
 		for (int i : arr) {
 			System.out.print(i+" ");
