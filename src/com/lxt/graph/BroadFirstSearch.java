@@ -22,7 +22,7 @@ public class BroadFirstSearch {
 			}
 		}
 	}
-	
+
 	private static void bfs(Graph g, boolean[] isVisited, int i){
 		System.out.println(g.getVertexValue(i) + " ");
 		
