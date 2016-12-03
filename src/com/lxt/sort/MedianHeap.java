@@ -1,31 +1,32 @@
 package com.lxt.sort;
 
-/**
- * @author zer0
- *
- */
-public class HeapSort {
+public class MedianHeap {
 
-	public static void heapSort(int[] arr){
-		if (arr == null || arr.length == 0) {
-			return;
+	public static int[] median(int[] arr, int k){
+		if(arr == null || arr.length == 0 || k <= 0 || k > arr.length){
+			return null ;
 		}
 		
-		//构建堆
-		buildMaxHeap(arr);
-		//末尾与头部交换，交换后调整最大堆
-		for(int i = arr.length - 1; i > 0; i--){
-			int tmp = arr[0];
-			arr[0] = arr[i];
-			arr[i] = tmp;
-			minHeapify(arr, 0, i-1);
+		int[] kHeap = new int[k];
+		for(int i = 0; i < k; i++){
+			kHeap[i] = arr[i];
 		}
-	}
-	
-	private static void buildMaxHeap(int[] arr){
-		for(int i = arr.length / 2; i >= 0; i--){
-			minHeapify(arr, i, arr.length-1);
+		for (int i = k/2; i >= 0; i--) {
+//			minHeapify(kHeap, i, k-1); //前k个大的数
+			maxHeapify(kHeap, i, k-1); //前k个小的数
 		}
+		
+		
+		for(int i = k; i < arr.length; i++){
+//			if(arr[i] > kHeap[0]){
+			if(arr[i] < kHeap[0]){
+				kHeap[0] = arr[i];
+//				minHeapify(kHeap, 0, k-1);
+				maxHeapify(kHeap, 0, k-1);
+			}
+		}
+		
+		return kHeap;
 	}
 	
 	private static void minHeapify(int[] arr, int index, int heapSize){
@@ -75,13 +76,12 @@ public class HeapSort {
 		arr[index] = maxTemp; 
 	}
 	
-	public static void main(String[] args) {
-		int arr[] = {44,5,98,2,32,1,95,35,22,62};
-//		int arr[] = {3,1,4,2,5};
-		heapSort(arr);
-		for (int i : arr) {
-			System.out.print(i+" ");
+	   public static void main(String[] args) {
+			int nums[] = {7,9,4,5,3,6,7};
+//			int nums[] = {2,1,3,4,2,3,1,5,0};
+			int[] res= median(nums, 4);
+			for(int i = 0; i<res.length; i++){
+				System.out.print(res[i] + " ");
+			}
 		}
-	}
-	
 }
