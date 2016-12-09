@@ -2,9 +2,9 @@ package com.lxt.sort;
 
 public class MedianHeap {
 
-	public static int[] median(int[] arr, int k){
+	public static int median(int[] arr, int k){
 		if(arr == null || arr.length == 0 || k <= 0 || k > arr.length){
-			return null ;
+			return -1;
 		}
 		
 		int[] kHeap = new int[k];
@@ -12,21 +12,21 @@ public class MedianHeap {
 			kHeap[i] = arr[i];
 		}
 		for (int i = k/2; i >= 0; i--) {
-//			minHeapify(kHeap, i, k-1); //前k个大的数
-			maxHeapify(kHeap, i, k-1); //前k个小的数
+			minHeapify(kHeap, i, k-1); //前k个大的数
+//			maxHeapify(kHeap, i, k-1); //前k个小的数
 		}
 		
 		
 		for(int i = k; i < arr.length; i++){
-//			if(arr[i] > kHeap[0]){
-			if(arr[i] < kHeap[0]){
+			if(arr[i] > kHeap[0]){
+//			if(arr[i] < kHeap[0]){
 				kHeap[0] = arr[i];
-//				minHeapify(kHeap, 0, k-1);
-				maxHeapify(kHeap, 0, k-1);
+				minHeapify(kHeap, 0, k-1);
+//				maxHeapify(kHeap, 0, k-1);
 			}
 		}
 		
-		return kHeap;
+		return kHeap[0];
 	}
 	
 	private static void minHeapify(int[] arr, int index, int heapSize){
@@ -77,11 +77,12 @@ public class MedianHeap {
 	}
 	
 	   public static void main(String[] args) {
-			int nums[] = {7,9,4,5,3,6,7};
+			int nums[] = {7,9,4,5,3,6};
 //			int nums[] = {2,1,3,4,2,3,1,5,0};
-			int[] res= median(nums, 4);
-			for(int i = 0; i<res.length; i++){
-				System.out.print(res[i] + " ");
-			}
+			int res= median(nums, 4);
+//			for(int i = 0; i<res.length; i++){
+//				System.out.print(res[i] + " ");
+//			}
+			System.out.println(res);
 		}
 }
