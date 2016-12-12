@@ -23,7 +23,7 @@ public class RotateWord {
 			}
 		}
 
-		if (start!=0 && start < chars.length) {
+		if (start < chars.length) {
 			reverse(chars, start, chars.length-1);
 		}
 		
@@ -55,7 +55,8 @@ public class RotateWord {
 	}
 	
 	public static void main(String[] args) {
-		char[] chars = {'I','\'','m',' ','a',' ','s','t','u','d','e','n','t','.'};
+//		char[] chars = {'I','\'','m',' ','a',' ','s','t','u','d','e','n','t','.'};
+		char[] chars = {'W', 'o', 'r', 'l', 'd'};
 		rotateWord(chars);
 		
 		char[] chars2 = {'A','B','C','D','E','F','G'};

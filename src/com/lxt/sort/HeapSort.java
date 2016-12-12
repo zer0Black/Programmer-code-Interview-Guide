@@ -18,14 +18,33 @@ public class HeapSort {
 			int tmp = arr[0];
 			arr[0] = arr[i];
 			arr[i] = tmp;
-			maxHeapify(arr, 0, i);
+			minHeapify(arr, 0, i-1);
 		}
 	}
 	
 	private static void buildMaxHeap(int[] arr){
-		for(int i = (arr.length - 2) / 2; i >= 0; i--){
-			maxHeapify(arr, i, arr.length-1);
+		for(int i = arr.length / 2; i >= 0; i--){
+			minHeapify(arr, i, arr.length-1);
 		}
+	}
+	
+	private static void minHeapify(int[] arr, int index, int heapSize){
+		int child = index * 2 + 1;
+		int minTemp = arr[index];
+		while(child <= heapSize){
+			if(child + 1 <= heapSize && arr[child] > arr[child+1]){
+				child++;
+			}
+			
+			if(arr[child] >= minTemp){
+				break;
+			}
+			
+			arr[index] = arr[child];
+			index = child;
+			child = index * 2 + 1;
+		}
+		arr[index] = minTemp;
 	}
 	
 	/**
@@ -39,8 +58,8 @@ public class HeapSort {
 		int maxTemp = arr[index];
 		int child = index * 2 + 1;
 		
-		while(child < heapSize){
-			if (child + 1 < heapSize && arr[child] < arr[child + 1]) {
+		while(child <= heapSize){
+			if (child + 1 <= heapSize && arr[child] < arr[child + 1]) {
 				child++;
 			}
 			
@@ -58,6 +77,7 @@ public class HeapSort {
 	
 	public static void main(String[] args) {
 		int arr[] = {44,5,98,2,32,1,95,35,22,62};
+//		int arr[] = {3,1,4,2,5};
 		heapSort(arr);
 		for (int i : arr) {
 			System.out.print(i+" ");
