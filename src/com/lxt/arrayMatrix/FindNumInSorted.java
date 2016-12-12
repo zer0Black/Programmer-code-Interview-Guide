@@ -1,5 +1,8 @@
 package com.lxt.arrayMatrix;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 在行列都排好序的矩阵中找数
  * 题目：给定一个有NxM的整型矩阵matrix和一个整数k，matrix的每一行和每一列都是排好序的。
@@ -20,6 +23,9 @@ public class FindNumInSorted {
 		if(matrix == null || matrix.length == 0 || matrix[0].length == 0){
 			return false;
 		}
+		
+		Map map = new HashMap<>();
+		
 		
 		int row = matrix.length-1;
 		int col = matrix[0].length-1;

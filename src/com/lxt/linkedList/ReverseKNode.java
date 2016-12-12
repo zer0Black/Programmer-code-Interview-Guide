@@ -1,12 +1,6 @@
 package com.lxt.linkedList;
 
-import java.util.Currency;
 import java.util.Stack;
-
-import javax.security.auth.kerberos.KerberosKey;
-
-import javafx.scene.shape.Circle;
-import sun.net.www.content.audio.x_aiff;
 
 /**
  * 将单链表的每k个节点之间逆序

@@ -3,8 +3,6 @@
  */
 package com.lxt.linkedList;
 
-import com.sun.xml.internal.ws.api.pipe.NextAction;
-
 /**
  * 删除链表的中间节点和a/b处的节点
  * @author zer0

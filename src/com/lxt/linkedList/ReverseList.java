@@ -1,7 +1,5 @@
 package com.lxt.linkedList;
 
-import java.util.Currency;
-
 /**
  * 反转单向链表 和 双向链表
  * @author zer0
