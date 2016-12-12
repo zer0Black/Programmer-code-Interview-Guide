@@ -1,9 +1,4 @@
 package com.lxt.linkedList;
-
-import org.omg.CORBA.NO_IMPLEMENT;
-
-import com.sun.org.apache.regexp.internal.recompile;
-
 /**
  * 两个单链表相交的一系列问题
  * 题目：单链表可能有环，也可能无环。给定两个单链表的头节点
