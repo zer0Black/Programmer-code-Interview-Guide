@@ -30,7 +30,7 @@ public class pow {
 	
 	public static void main(String[] args) {
 		int n = 2;
-		int k = -3;
+		int k = 10;
 		System.out.println(pow(n, k));
 	}
 	
