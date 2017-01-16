@@ -26,7 +26,6 @@ public class BucketSort {
 		}
 		
 		for(int i = 0; i < arr.length; i++){
-//			int num = (arr[i] - min) / ((max - min)/(arr.length-1));
 			int num = (arr[i] - min) / (arr.length);
 			bucketArr.get(num).add(arr[i]);
 		}
