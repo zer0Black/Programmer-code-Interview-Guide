@@ -3,8 +3,6 @@ package com.lxt.character;
 import java.util.HashMap;
 import java.util.Map;
 
-import javafx.beans.binding.StringBinding;
-
 /**
  * 找到字符串的最长无重复字符子串
  * @author zer0

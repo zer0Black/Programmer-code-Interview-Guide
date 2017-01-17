@@ -2,8 +2,6 @@ package com.lxt.linkedList;
 
 import java.util.HashSet;
 
-import javafx.scene.shape.Circle;
-
 /**
  * 删除无序单链表中值重复出现的节点
  * 题目：给定一个无序单链表的头结点head，删除其中值重复出现的节点
